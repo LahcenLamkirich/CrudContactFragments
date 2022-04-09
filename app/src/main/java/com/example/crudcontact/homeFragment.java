@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class homeFragment extends Fragment {
@@ -33,8 +34,13 @@ public class homeFragment extends Fragment {
         public void onClick(View view) {
             String usernameString = username.getText().toString();
             String passwordString = password.getText().toString();
-            System.out.println("The username is " + usernameString);
-            System.out.println("And The password is " + passwordString);
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("User: ");
+            stringBuilder.append(usernameString);
+            stringBuilder.append(" Pass: ");
+            stringBuilder.append(passwordString);
+            String res = stringBuilder.toString();
+            Toast.makeText(getContext(),res, Toast.LENGTH_LONG).show();
 
             username.setText("");
             password.getText().clear();
