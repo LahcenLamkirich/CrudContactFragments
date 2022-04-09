@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         // this two lines to adopt the view with the activity :
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mainBinding.getRoot());
+
         switchFragment(new homeFragment());
 
         // The Traitement start from here :
