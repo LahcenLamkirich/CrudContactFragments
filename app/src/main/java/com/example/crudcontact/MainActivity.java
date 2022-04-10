@@ -27,11 +27,13 @@ public class MainActivity extends AppCompatActivity {
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mainBinding.getRoot());
 
-
+        // we have to add this line to avoid the null pointer Exception
+        database = RoomDb.getInstance(this);
         // La declaration d'une peson
         p1 = new Person();
         p1.setNamePerson("Lahcen");
         p1.setTelephone("0777208954");
+
         database.personDao().insert(p1);
 
         System.out.println(p1.getNamePerson() + " Phone Number : " + p1.getTelephone());
