@@ -8,17 +8,21 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.crudcontact.DAO.RoomDb;
 import com.example.crudcontact.Entities.Person;
 import com.example.crudcontact.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding mainBinding ;
     RoomDb database ;
     Person p1 ;
+    List<Person> personList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,15 +33,21 @@ public class MainActivity extends AppCompatActivity {
 
         // we have to add this line to avoid the null pointer Exception
         database = RoomDb.getInstance(this);
+
         // La declaration d'une peson
         p1 = new Person();
         p1.setNamePerson("Lahcen");
         p1.setTelephone("0777208954");
-
+        // add a person
         database.personDao().insert(p1);
-
         System.out.println(p1.getNamePerson() + " Phone Number : " + p1.getTelephone());
-
+        //get All the persons :
+        personList = database.personDao().getAll();
+        for(Person p:personList) {
+            System.out.println(p.getNamePerson() + " phone number : " + p.getTelephone());
+            String contcat = p.getNamePerson().toString() + p.getTelephone().toString();
+            Toast.makeText(this, contcat, Toast.LENGTH_LONG).show();
+        }
         switchFragment(new homeFragment());
 
         // The Traitement start from here :
