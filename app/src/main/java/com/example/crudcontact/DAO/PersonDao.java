@@ -9,7 +9,7 @@ import com.example.crudcontact.Entities.Person;
 import java.util.List;
 
 @Dao
-public interface UserDao {
+public interface PersonDao {
 
     @Query("SELECT * FROM person")
     List<Person> getAll();
