@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.RenameTable;
 
-@Entity
+@Entity(tableName = "person")
 public class Person {
     @PrimaryKey
     private int idPerson ;
