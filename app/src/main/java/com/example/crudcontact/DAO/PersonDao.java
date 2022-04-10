@@ -18,7 +18,7 @@ public interface PersonDao {
     Person getPersonById(int id);
 
     @Insert
-    void insert(int id, String name, String telephone);
+    void insert(Person person);
 
     @Query("DELETE FROM person WHERE idPerson =:id")
     void delete(int id);
