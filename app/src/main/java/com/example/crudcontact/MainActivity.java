@@ -30,13 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
         // La declaration d'une peson
         p1 = new Person();
-        p1
-        database.personDao().insert();
+        p1.setNamePerson("Lahcen");
+        p1.setTelephone("0777208954");
+        database.personDao().insert(p1);
 
-
-
-
-
+        System.out.println(p1.getNamePerson() + " Phone Number : " + p1.getTelephone());
 
         switchFragment(new homeFragment());
 
