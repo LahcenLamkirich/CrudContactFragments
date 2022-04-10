@@ -7,7 +7,7 @@ import androidx.room.RenameTable;
 
 @Entity(tableName = "person")
 public class Person {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int idPerson ;
 
     @ColumnInfo(name = "name")

@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 
 import com.example.crudcontact.Entities.Person;
 
-@Database(entities = {Person.class}, version = 1, exportSchema = false)
+@Database(entities = {Person.class}, version = 1, exportSchema = true)
 public abstract class RoomDb extends RoomDatabase {
 
     private static RoomDb database;
