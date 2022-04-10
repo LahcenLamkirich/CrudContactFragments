@@ -9,13 +9,16 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.crudcontact.DAO.RoomDb;
+import com.example.crudcontact.Entities.Person;
 import com.example.crudcontact.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding mainBinding ;
-
+    RoomDb database ;
+    Person p1 ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +26,17 @@ public class MainActivity extends AppCompatActivity {
         // this two lines to adopt the view with the activity :
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mainBinding.getRoot());
+
+
+        // La declaration d'une peson
+        p1 = new Person();
+        p1
+        database.personDao().insert();
+
+
+
+
+
 
         switchFragment(new homeFragment());
 
@@ -44,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
     }
 
     public void switchFragment(Fragment fragment){
@@ -53,5 +68,8 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frame, fragment);
         fragmentTransaction.commit();
     }
+
+
+
 
 }
