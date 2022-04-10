@@ -2,6 +2,7 @@ package com.example.crudcontact.DAO;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import com.example.crudcontact.Entities.Person;
@@ -17,7 +18,7 @@ public interface PersonDao {
     @Query("SELECT * FROM person WHERE idPerson=:id")
     Person getPersonById(int id);
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Person person);
 
     @Query("DELETE FROM person WHERE idPerson =:id")
