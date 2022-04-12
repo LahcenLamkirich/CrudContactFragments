@@ -7,13 +7,49 @@
     tools:context=".profileFragment">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="410dp"
-        android:layout_height="351dp"
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="318dp"
+        android:layout_height="219dp"
+        android:layout_marginTop="44dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:lottie_rawRes="@raw/contact"
         app:lottie_autoPlay="true"
+
+        app:lottie_rawRes="@raw/contact"
         tools:ignore="MissingConstraints" />
 
+    <LinearLayout
+        android:layout_width="405dp"
+        android:layout_height="332dp"
+        android:layout_marginTop="36dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"
+        tools:context=".MainActivity"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="3dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/filledTextField"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Enter something">
+
+            <!--this is the actual edit text which takes the input-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
