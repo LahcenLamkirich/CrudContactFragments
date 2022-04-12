@@ -30,32 +30,7 @@ public class MainActivity extends AppCompatActivity {
         // this two lines to adopt the view with the activity :
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mainBinding.getRoot());
-
-        // we have to add this line to avoid the null pointer Exception
-        database = RoomDb.getInstance(this);
-
-        // La declaration d'une peson
-        p1 = new Person();
-        p2 = new Person();
-        p3 = new Person();
-        p1.setNamePerson("Lahcen");
-        p1.setTelephone("0777208954");
-        p2.setNamePerson("Ahmed");
-        p2.setTelephone("0678954523");
-        p3.setNamePerson("Yasser");
-        p3.setTelephone("0741526389");
-        // add a person
-        database.personDao().insert(p1);
-        database.personDao().insert(p2);
-        database.personDao().insert(p3);
-        System.out.println(p1.getNamePerson() + " Phone Number : " + p1.getTelephone());
-        //get All the persons :
-        personList = database.personDao().getAll();
-        for(Person p:personList) {
-            System.out.println(p.getNamePerson() + " phone number : " + p.getTelephone());
-            String contcat = "User " + p.getNamePerson().toString() + " Phone: " + p.getTelephone().toString();
-            Toast.makeText(this, contcat, Toast.LENGTH_SHORT).show();
-        }
+        
         switchFragment(new homeFragment());
 
         // The Traitement start from here :
