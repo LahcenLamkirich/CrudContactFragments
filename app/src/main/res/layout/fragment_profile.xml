@@ -30,8 +30,7 @@
         tools:layout_editor_absoluteX="3dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/filledTextField"
-
+            
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
             android:layout_width="match_parent"
@@ -41,15 +40,15 @@
             android:layout_marginEnd="32dp"
             android:hint="Username">
 
-            <!--this is the actual edit text which takes the input-->
+            <!-- this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/phoneNumber"
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
@@ -62,13 +61,13 @@
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_text"
+                android:id="@+id/phoneNumber"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
-
-
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
