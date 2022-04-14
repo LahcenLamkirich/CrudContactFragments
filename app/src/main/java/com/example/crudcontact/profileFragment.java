@@ -27,7 +27,13 @@ public class profileFragment extends Fragment {
         username = view.findViewById(R.id.username);
         phoneNumber = view.findViewById(R.id.phoneNumber);
 
-
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("Username is " + username.getText().toString() +
+                        " and phone number is " + phoneNumber.getText().toString());
+            }
+        });
 
         return view ;
     }
