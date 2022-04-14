@@ -7,4 +7,14 @@
     tools:context=".homeFragment"
     >
 
+    <ImageView
+        android:id="@+id/imgViewOne"
+        android:layout_width="420dp"
+        android:layout_height="126dp"
+        android:background="@drawable/ic_wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
