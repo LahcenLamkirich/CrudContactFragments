@@ -1,5 +1,6 @@
 package com.example.crudcontact;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -35,14 +36,15 @@ public class profileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Person person = new Person();
-
                 person.setNamePerson(username.getText().toString());
                 person.setTelephone(phoneNumber.getText().toString());
                 database.personDao().insert(person);
-                System.out.println("Person Added succesfully !");
+
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
             }
         });
 
-        return view ;
+        return view;
     }
 }
