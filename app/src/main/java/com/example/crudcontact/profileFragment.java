@@ -35,11 +35,11 @@ public class profileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Person person = new Person();
+
                 person.setNamePerson(username.getText().toString());
                 person.setTelephone(phoneNumber.getText().toString());
-
                 database.personDao().insert(person);
-
+                System.out.println("Person Added succesfully !");
             }
         });
 
