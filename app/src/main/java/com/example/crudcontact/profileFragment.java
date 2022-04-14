@@ -30,7 +30,7 @@ public class profileFragment extends Fragment {
         btnAdd = view.findViewById(R.id.btnAdd);
         username = view.findViewById(R.id.username);
         phoneNumber = view.findViewById(R.id.phoneNumber);
-
+        database = RoomDb.getInstance(getContext());
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
