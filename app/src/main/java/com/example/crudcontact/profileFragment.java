@@ -10,11 +10,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.crudcontact.DAO.RoomDb;
+import com.example.crudcontact.Entities.Person;
+
 public class profileFragment extends Fragment {
 
     Button btnAdd ;
     EditText username, phoneNumber ;
 
+    RoomDb database ;
 
     public profileFragment(){}
 
@@ -30,8 +34,12 @@ public class profileFragment extends Fragment {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("Username is " + username.getText().toString() +
-                        " and phone number is " + phoneNumber.getText().toString());
+                Person person = new Person();
+                person.setNamePerson(username.getText().toString());
+                person.setTelephone(phoneNumber.getText().toString());
+
+                database.personDao().insert(person);
+
             }
         });
 
