@@ -3,7 +3,6 @@ package com.example.crudcontact.Entities;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import androidx.room.RenameTable;
 
 @Entity(tableName = "person")
 public class Person {
@@ -31,7 +30,7 @@ public class Person {
         return namePerson;
     }
 
-    public String getTelephone() {
+    public Person getTelephone() {
         return telephone;
     }
 

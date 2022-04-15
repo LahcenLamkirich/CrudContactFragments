@@ -47,6 +47,7 @@ public class homeFragment extends Fragment {
     recyclerView.setLayoutManager(linearLayoutManager);
     personAdapter = new PersonAdapter(getContext(), contacts);
     recyclerView.setAdapter(personAdapter);
+
     return view ;
    }
 
