@@ -19,12 +19,11 @@ import java.util.ArrayList;
 public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.view> {
 
     Context context ;
-    ArrayList<Person> usernames, phoneNumbers ;
+    ArrayList<Person> persons ;
 
-    public PersonAdapter(Context context, ArrayList<Person> usernames, ArrayList<Person> phoneNumbers) {
+    public PersonAdapter(Context context, ArrayList<Person> persons) {
         this.context = context;
-        this.usernames = usernames;
-        this.phoneNumbers = phoneNumbers;
+        this.persons = persons;
     }
 
     @NonNull
@@ -37,13 +36,14 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.view> {
 
     @Override
     public void onBindViewHolder(@NonNull PersonAdapter.view holder, int position) {
-        holder.username.setText(String.valueOf(usernames.get(position)));
-        holder.phoneNumber.setText(String.valueOf(phoneNumbers.get(position)));
+        Person person = persons.get(position);
+        holder.username.setText(person.getNamePerson());
+        holder.phoneNumber.setText(person.getTelephone());
     }
 
     @Override
     public int getItemCount() {
-        return usernames.size();
+        return persons.size();
     }
 
     public class view extends RecyclerView.ViewHolder{

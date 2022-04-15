@@ -3,6 +3,7 @@ package com.example.crudcontact;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -26,28 +27,26 @@ public class homeFragment extends Fragment {
     EditText username, password ;
     Button btnSave ;
     public homeFragment(){}
+
     RecyclerView recyclerView;
     PersonAdapter personAdapter ;
-    ArrayList<Person> usernames, phoneNumbers ;
+    ArrayList<Person> contacts = new ArrayList<>();
     RoomDb database ;
-
+    LinearLayoutManager linearLayoutManager;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-    database = RoomDb.getInstance(getContext());
     recyclerView = view.findViewById(R.id.recycleView);
+    database = RoomDb.getInstance(getContext());
 
-    usernames = new ArrayList<>();
-    phoneNumbers = new ArrayList<>();
+    contacts = (ArrayList<Person>) database.personDao().getAll();
 
-//    usernames = (ArrayList<Person>) database.personDao().getAll();
-//        for (Person p:usernames) {
-//            System.out.println(p.getNamePerson());
-//        }
-
-        
+    linearLayoutManager=new LinearLayoutManager(getContext());
+    recyclerView.setLayoutManager(linearLayoutManager);
+    personAdapter = new PersonAdapter(getContext(), contacts);
+    recyclerView.setAdapter(personAdapter);
     return view ;
    }
 
