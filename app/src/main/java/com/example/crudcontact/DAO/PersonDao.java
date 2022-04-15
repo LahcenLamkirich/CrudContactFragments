@@ -26,5 +26,8 @@ public interface PersonDao {
 
     @Query("UPDATE person SET name=:nameP AND phoneNumber=:tel where idPerson=:id")
     void update(int id, String nameP, String tel);
+
+    @Query("UPDATE person SET name=:nameP,phoneNumber=:tel where idPerson=:sid")
+    void update12(int sid, String nameP, String tel);
     
 }
