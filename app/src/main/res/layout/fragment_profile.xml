@@ -45,7 +45,7 @@
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/user"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
                 android:drawablePadding="10dp" />
 
         </com.google.android.material.textfield.TextInputLayout>

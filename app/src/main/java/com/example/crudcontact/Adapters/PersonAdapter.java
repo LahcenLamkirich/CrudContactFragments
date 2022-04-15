@@ -19,11 +19,10 @@ import java.util.ArrayList;
 public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.view> {
 
     Context context ;
-    ArrayList<Person> person_ids, usernames, phoneNumbers ;
+    ArrayList<Person> usernames, phoneNumbers ;
 
-    public PersonAdapter(Context context, ArrayList<Person> person_ids, ArrayList<Person> usernames, ArrayList<Person> phoneNumbers) {
+    public PersonAdapter(Context context, ArrayList<Person> usernames, ArrayList<Person> phoneNumbers) {
         this.context = context;
-        this.person_ids = person_ids;
         this.usernames = usernames;
         this.phoneNumbers = phoneNumbers;
     }
@@ -44,7 +43,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.view> {
 
     @Override
     public int getItemCount() {
-        return person_ids.size();
+        return usernames.size();
     }
 
     public class view extends RecyclerView.ViewHolder{
