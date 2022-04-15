@@ -49,6 +49,7 @@ public class homeFragment extends Fragment {
     recyclerView.setAdapter(personAdapter);
 
     return view ;
+
    }
 
 

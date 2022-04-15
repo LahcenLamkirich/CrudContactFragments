@@ -37,29 +37,25 @@ public class MainActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_CALL) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Person p = new Person();
-                phoneCall(p.getTelephone());
+                Person contact = new Person();
+                contact.setTelephone(permissions[1]);
+                phoneCall(contact);
             } else {
                 Toast.makeText(this, "Permission DENIED", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
-    public void call(View view){
-        Person p = new Person();
-        phoneCall(p);
-    }
-
     private void phoneCall(Person p) {
         if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MainActivity.this,
-                    new String[]{Manifest.permission.CALL_PHONE, String.valueOf(p.getTelephone())}, REQUEST_CALL);
+                    new String[]{
+                            Manifest.permission.CALL_PHONE, p.getTelephone() }, REQUEST_CALL);
         } else {
             String phoneNumber = "tel:" + p.getTelephone();
             startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(phoneNumber)));
         }
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        
+
     }
 
     public void switchFragment(Fragment fragment){

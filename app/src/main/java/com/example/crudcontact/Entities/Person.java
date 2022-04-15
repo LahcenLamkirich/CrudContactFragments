@@ -30,7 +30,7 @@ public class Person {
         return namePerson;
     }
 
-    public Person getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 

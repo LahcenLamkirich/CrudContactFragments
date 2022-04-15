@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.crudcontact.DAO.RoomDb;
 import com.example.crudcontact.Entities.Person;
+import com.example.crudcontact.MainActivity;
 import com.example.crudcontact.R;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.view> {
 
     Context context ;
     ArrayList<Person> persons ;
-
+    MainActivity main = new MainActivity();
     public PersonAdapter(Context context, ArrayList<Person> persons) {
         this.context = context;
         this.persons = persons;
@@ -46,10 +47,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.view> {
         holder.username.setText(person.getNamePerson());
         holder.phoneNumber.setText(person.getTelephone());
 
-
-
         RoomDb database = RoomDb.getInstance(context);
-
 
         holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,9 +121,6 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.view> {
                 notifyDataSetChanged();
             }
         });
-
-
-
 
     }
 
