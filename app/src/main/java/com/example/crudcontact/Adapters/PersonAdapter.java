@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -50,11 +51,14 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.view> {
 
         TextView phoneNumber, username;
         LinearLayout mainLayout ;
+        ImageView btnEdit, btnDelete ;
         public view(@NonNull android.view.View itemView) {
             super(itemView);
             username = itemView.findViewById(R.id.usernameId);
             phoneNumber = itemView.findViewById(R.id.phoneNumber);
             mainLayout = itemView.findViewById(R.id.mainLayout);
+            btnEdit = itemView.findViewById(R.id.editBtn);
+            btnDelete = itemView.findViewById(R.id.deleteBtn);
         }
     }
 

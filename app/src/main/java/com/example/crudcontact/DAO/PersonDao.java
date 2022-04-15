@@ -24,7 +24,7 @@ public interface PersonDao {
     @Query("DELETE FROM person WHERE idPerson =:id")
     void delete(int id);
 
-    @Query("UPDATE person SET name=:nameP AND phoneNumber=:tel")
-    void update(String nameP, String tel);
+    @Query("UPDATE person SET name=:nameP AND phoneNumber=:tel where idPerson=:id")
+    void update(int id, String nameP, String tel);
     
 }
