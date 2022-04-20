@@ -1,6 +1,6 @@
 package com.example.crudcontact;
 
-import  androidx.annotation.NonNull;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -13,10 +13,15 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
+import com.example.crudcontact.Adapters.PersonAdapter;
 import com.example.crudcontact.DAO.RoomDb;
 import com.example.crudcontact.Entities.Person;
 import com.example.crudcontact.databinding.ActivityMainBinding;
@@ -25,12 +30,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    SearchView searchView ;
     ActivityMainBinding mainBinding ;
     RoomDb database ;
     Person p1, p2, p3 ;
     List<Person> personList;
     private int REQUEST_CALL ;
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode,String[] permissions,int[] grantResults) {
@@ -62,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-        
+//        personAdapter = new PersonAdapter(this,database.personDao().getAll());
         // this two lines to adopt the view with the activity :
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mainBinding.getRoot());
@@ -97,8 +103,4 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frame, fragment);
         fragmentTransaction.commit();
     }
-
-
-
-
 }

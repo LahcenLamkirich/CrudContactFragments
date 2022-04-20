@@ -121,7 +121,6 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.view> {
                 notifyDataSetChanged();
             }
         });
-
     }
 
     @Override

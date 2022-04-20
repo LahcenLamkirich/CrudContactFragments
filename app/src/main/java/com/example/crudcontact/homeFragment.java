@@ -7,11 +7,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.crudcontact.Adapters.PersonAdapter;
 import com.example.crudcontact.DAO.RoomDb;
@@ -26,13 +30,14 @@ public class homeFragment extends Fragment {
 
     EditText username, password ;
     Button btnSave ;
-    public homeFragment(){}
 
+    public homeFragment(){}
     RecyclerView recyclerView;
     PersonAdapter personAdapter ;
     ArrayList<Person> contacts = new ArrayList<>();
     RoomDb database ;
     LinearLayoutManager linearLayoutManager;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,7 +45,6 @@ public class homeFragment extends Fragment {
 
     recyclerView = view.findViewById(R.id.recycleView);
     database = RoomDb.getInstance(getContext());
-
     contacts = (ArrayList<Person>) database.personDao().getAll();
 
     linearLayoutManager=new LinearLayoutManager(getContext());
@@ -48,9 +52,7 @@ public class homeFragment extends Fragment {
     personAdapter = new PersonAdapter(getContext(), contacts);
     recyclerView.setAdapter(personAdapter);
 
+
     return view ;
-
    }
-
-
 }

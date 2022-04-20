@@ -7,11 +7,13 @@
         <entry key="..\:/Users/Lahcen Lamkirich/Desktop/ENSET S4/Android/CrudContact/app/src/main/res/drawable/user.xml" value="0.1735" />
         <entry key="..\:/Users/Lahcen Lamkirich/Desktop/ENSET S4/Android/CrudContact/app/src/main/res/drawable/user1.xml" value="0.1835" />
         <entry key="..\:/Users/Lahcen Lamkirich/Desktop/ENSET S4/Android/CrudContact/app/src/main/res/layout/activity_main.xml" value="0.2453125" />
+        <entry key="..\:/Users/Lahcen Lamkirich/Desktop/ENSET S4/Android/CrudContact/app/src/main/res/layout/appbar.xml" value="0.25625" />
         <entry key="..\:/Users/Lahcen Lamkirich/Desktop/ENSET S4/Android/CrudContact/app/src/main/res/layout/customcontact.xml" value="0.24242424242424243" />
         <entry key="..\:/Users/Lahcen Lamkirich/Desktop/ENSET S4/Android/CrudContact/app/src/main/res/layout/dialogedit.xml" value="0.3" />
-        <entry key="..\:/Users/Lahcen Lamkirich/Desktop/ENSET S4/Android/CrudContact/app/src/main/res/layout/fragment_home.xml" value="0.2453125" />
-        <entry key="..\:/Users/Lahcen Lamkirich/Desktop/ENSET S4/Android/CrudContact/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Users/Lahcen Lamkirich/Desktop/ENSET S4/Android/CrudContact/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/Lahcen Lamkirich/Desktop/ENSET S4/Android/CrudContact/app/src/main/res/layout/fragment_profile.xml" value="0.268" />
         <entry key="..\:/Users/Lahcen Lamkirich/Desktop/ENSET S4/Android/CrudContact/app/src/main/res/menu/bottom_items.xml" value="0.1" />
+        <entry key="..\:/Users/Lahcen Lamkirich/Desktop/ENSET S4/Android/CrudContact/app/src/main/res/menu/menusearch.xml" value="0.3" />
       </map>
     </option>
   </component>
