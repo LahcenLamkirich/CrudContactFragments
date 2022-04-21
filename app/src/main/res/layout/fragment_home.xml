@@ -35,24 +35,21 @@
         android:id="@+id/searchEditTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="80dp"
         android:ems="12"
         android:inputType="textPersonName"
-        android:text="Username you search"
         app:layout_constraintBottom_toTopOf="@+id/recycleView"
-        app:layout_constraintEnd_toStartOf="@+id/btnIconSearch"
-        app:layout_constraintHorizontal_bias="0.352"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgViewOne"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintVertical_bias="0.395" />
 
-    <Button
-        android:id="@+id/btnIconSearch"
-        android:layout_width="41dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="52dp"
-        android:background="@drawable/search"
-        app:layout_constraintBaseline_toBaselineOf="@+id/searchEditTxt"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <!--    <Button-->
+<!--        android:id="@+id/btnIconSearch"-->
+<!--        android:layout_width="41dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_marginEnd="52dp"-->
+<!--        android:background="@drawable/search"-->
+<!--        app:layout_constraintBaseline_toBaselineOf="@+id/searchEditTxt"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,8 +26,8 @@ import java.util.ArrayList;
 
 public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.view> {
 
-    Context context ;
-    ArrayList<Person> persons ;
+    public Context context ;
+    public ArrayList<Person> persons;
     MainActivity main = new MainActivity();
     public PersonAdapter(Context context, ArrayList<Person> persons) {
         this.context = context;
@@ -133,6 +134,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.view> {
         TextView phoneNumber, username;
         LinearLayout mainLayout ;
         ImageView btnEdit, btnDelete ;
+
         public view(@NonNull android.view.View itemView) {
             super(itemView);
             username = itemView.findViewById(R.id.usernameId);

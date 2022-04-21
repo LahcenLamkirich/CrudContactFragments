@@ -31,6 +31,6 @@ public interface PersonDao {
     void update12(int sid, String nameP, String tel);
 
     @Query("SELECT * FROM person where name LIKE :key || '%' ")
-    List<Person> getAllByname(String key);
+    Person getPersonByName(String key);
     
 }
