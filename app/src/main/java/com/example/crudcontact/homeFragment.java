@@ -32,8 +32,8 @@ public class homeFragment extends Fragment {
     // la declaration des attributs :
 
     EditText username, password, searchText ;
-    Button btnSave, searchBtn;
-    ArrayList<Person> persons ;
+//    Button btnSave, searchBtn;
+//    ArrayList<Person> persons ;
     public homeFragment(){}
     RecyclerView recyclerView;
     PersonAdapter personAdapter ;
@@ -50,7 +50,6 @@ public class homeFragment extends Fragment {
     database = RoomDb.getInstance(getContext());
     contacts = (ArrayList<Person>) database.personDao().getAll();
     searchText = view.findViewById(R.id.searchEditTxt);
-//    searchBtn = view.findViewById(R.id.btnIconSearch);
     linearLayoutManager=new LinearLayoutManager(getContext());
     recyclerView.setLayoutManager(linearLayoutManager);
     personAdapter = new PersonAdapter(getContext(), contacts);
